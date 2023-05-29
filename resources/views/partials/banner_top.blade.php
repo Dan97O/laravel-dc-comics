@@ -8,7 +8,9 @@
             <div class="col-12 d-flex flex-wrap justify-content-evenly g-2">
                 @foreach ($comics as $comic)
                     <div class="my_card me-3" v-for="img in comics">
-                        <img src="{{ $comic['thumb'] }}" alt="">
+                        <a href="{{ route('comic', $comic->id) }}">
+                            <img src="{{ $comic['thumb'] }}" alt="">
+                        </a>
                         <div class="text">
                             <span>
                                 {{ $comic['series'] }}

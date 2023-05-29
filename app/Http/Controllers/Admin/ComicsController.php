@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Comics;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class ComicsController extends Controller
@@ -13,11 +13,12 @@ class ComicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function comic()
     {
-        $comics = Comics::all();
+        $comics = Comics::orderByDesc('id')->get();
         //dd($comics);
-        return view('home', compact('comics'));
+        //return view('comic', compact('comics'));
     }
 
     /**
@@ -27,7 +28,7 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        //
+        return view('comic.create');
     }
 
     /**
