@@ -3,7 +3,6 @@
 @section('content')
     <div class="container">
         <div class="row">
-
             @forelse ($comics as $comic)
                 <div class="col d-flex">
                     <div class="card my-3 p-3">
@@ -14,6 +13,9 @@
                             </h4>
                             <p class="card-text">
                                 {{ $comic->series }}
+                            </p>
+                            <p class="card-text">
+                                {{ $comic->type }}
                             </p>
                             <p class="card-text">
                                 <strong>
