@@ -1,1 +1,168 @@
 @import '~bootstrap/scss/bootstrap';
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: white;
+
+    img {
+        height: 80px;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        flex-wrap: wrap;
+
+        a {
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+                color: #0282f9;
+            }
+        }
+    }
+}
+
+
+
+/* #region Main */
+main {
+    .banner_top {
+        padding: 0 0 1rem 0;
+        background-color: #1c1c1c;
+        color: white;
+
+        .jumbotron {
+            img {
+                height: 400px;
+                object-fit: cover;
+                object-position: top;
+                width: 100%;
+            }
+        }
+
+        .container {
+            margin-top: -12px;
+
+            button {
+                width: 160px;
+                background-color: #0282f9;
+                color: white;
+            }
+
+            .my_card {
+                height: 200px;
+                aspect-ratio: 1/1;
+                margin-bottom: 3rem;
+
+                img {
+                    height: 200px;
+                    width: 100%;
+                }
+
+                .text {
+                    display: flex;
+                    margin-top: 5px;
+                    width: 125px;
+
+                    span {
+                        font-size: 10px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    .banner_center {
+        padding: 2rem 0;
+        background-color: #0282f9;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 500;
+
+        nav {
+            a {
+                color: white !important;
+
+                img {
+                    margin: 2rem 0;
+                    height: 60px;
+                    padding-right: 1rem;
+                }
+            }
+        }
+
+
+    }
+
+    .banner_bottom {
+        background-image: url("../img/footer-bg.jpg");
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                line-height: 18px;
+
+                a {
+                    text-decoration: none;
+                    color: rgb(165, 165, 165);
+                    font-size: 12px;
+
+                    &:hover {
+                        color: rgb(232, 232, 240);
+                    }
+
+                    h4 {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .logo_dc {
+            background-image: url("../img/dc-logo-bg.png");
+            height: 500px;
+            background-repeat: no-repeat;
+            margin-top: -7rem;
+            z-index: 0;
+        }
+    }
+}
+
+/* #endregion Main */
+
+
+
+
+
+
+
+
+
+
+footer {
+    padding: 1.5rem 0;
+    background-color: #303030;
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+
+    button {
+        padding: 10px;
+        background-color: #303030;
+        border-color: #0282f9;
+        color: white;
+    }
+
+    h4 {
+        color: #0282f9;
+    }
+}
