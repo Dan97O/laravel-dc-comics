@@ -20,7 +20,7 @@
                 @endforeach
             </div>
             <div class=" d-flex justify-content-center my-3">
-                <button class="btn-outline-primary">LOAD MORE</button>
+                <a href="{{ route('comic', $comic->id) }}" class="btn-outline-primary">LOAD MORE</a>
             </div>
         </div>
     </div>
