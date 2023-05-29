@@ -9,14 +9,14 @@
             @csrf
 
             <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Comic name here "
+                <label for="title" class="form-label">Name</label>
+                <input type="text" name="title" id="title" class="form-control" placeholder="Comic name here "
                     aria-describedby="nameHelper" required>
                 <small id="nameHelper" class="text-muted">Type the name of the Comic max 50 characters</small>
             </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
-                <input type="text" name="image" id="image" class="form-control" placeholder="Comic image here "
+                <label for="thumb" class="form-label">Image</label>
+                <input type="text" name="thumb" id="thumb" class="form-control" placeholder="Comic image here "
                     aria-describedby="imageHelper">
                 <small id="imageHelper" class="text-muted">Type the image of the Comic max 50 characters</small>
             </div>
@@ -28,8 +28,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="price" class="form-label">Series</label>
-                <input type="text" name="price" id="price" class="form-control" placeholder="Comic price here "
+                <label for="series" class="form-label">Series</label>
+                <input type="text" name="series" id="series" class="form-control" placeholder="Comic price here "
                     aria-describedby="priceHelper">
                 <small id="priceHelper" class="text-muted">Type the series of the Comic max 50 characters</small>
             </div>

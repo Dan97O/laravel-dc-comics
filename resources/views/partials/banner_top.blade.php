@@ -8,7 +8,7 @@
             <div class="col-12 d-flex flex-wrap justify-content-evenly g-2">
                 @foreach ($comics as $comic)
                     <div class="my_card me-3" v-for="img in comics">
-                        <a href="{{ route('comic', $comic->id) }}">
+                        <a href="{{ route('comic') }}">
                             <img src="{{ $comic['thumb'] }}" alt="">
                         </a>
                         <div class="text">
@@ -20,7 +20,7 @@
                 @endforeach
             </div>
             <div class=" d-flex justify-content-center my-3">
-                <a href="{{ route('comic', $comic->id) }}" class="btn-outline-primary">LOAD MORE</a>
+                <a href="{{ route('comic') }}" class="btn-outline-primary">LOAD MORE</a>
             </div>
         </div>
     </div>

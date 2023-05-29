@@ -40,7 +40,8 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $pages = config('comics');
+        //dd($request->all());
         $comic = new Comics();
         $comic->title = $request->title;
         $comic->description = $request->description;
@@ -50,7 +51,7 @@ class ComicsController extends Controller
         $comic->sale_date = $request->sale_date;
         $comic->type = $request->type;
         $comic->save();
-        return to_route('comic.index');
+        return to_route('comic.index', 'pages');
     }
 
     /**
@@ -61,7 +62,8 @@ class ComicsController extends Controller
      */
     public function show(Comics $comics)
     {
-        return view('admin.comic.show', compact('comics'));
+        $pages = config('comics');
+        return view('admin.comic.show', compact('comics', 'pages'));
     }
 
     /**
