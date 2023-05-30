@@ -63,7 +63,7 @@ class ComicsController extends Controller
         $comic->sale_date = $request->sale_date;
         $comic->type = $request->type;
         $comic->save();
-        return to_route('admin.comic.index');
+        return to_route('admin.comic.index')->with('message', 'Comic created successfully');
     }
 
     /**
@@ -111,7 +111,7 @@ class ComicsController extends Controller
         ];
 
         $comic->update($data);
-        return to_route('admin.comic.index');
+        return to_route('admin.comic.index')->with('message', 'Comic Update');
     }
 
     /**

@@ -3,6 +3,11 @@
 
 @section('content')
     <div class="container">
+        @if (session('message'))
+            <div class="alert alert-primary" role="alert">
+                <strong>{{ session('message') }}</strong>
+            </div>
+        @endif
         <div class="d-flex justify-content-between align-items-center">
             <h1>Admin comics</h1>
             <a href="{{ route('admin.comic.create') }}" class="btn btn-dark d-block">
