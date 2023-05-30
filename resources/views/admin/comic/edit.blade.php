@@ -37,12 +37,28 @@
             </div>
 
             <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
+                <label for="type" class="form-label">Description</label>
                 <input type="text" name="description" id="description" class="form-control"
                     placeholder="Comic description here " aria-describedby="descriptionHelper"
                     value="{{ $comic->description }}">
                 <small id="descriptionHelper" class="text-muted">Type
                     the description of the Comic max 50 characters</small>
+            </div>
+
+            <div class="mb-3">
+                <label for="sale_date" class="form-label">sale_date</label>
+                <input type="text" name="sale_date" id="sale_date" class="form-control"
+                    placeholder="Comic sale_date here " aria-describedby="sale_dateHelper" value="{{ $comic->sale_date }}">
+                <small id="sale_dateHelper" class="text-muted">Type
+                    the sale_date of the Comic max 50 characters</small>
+            </div>
+
+            <div class="mb-3">
+                <label for="type" class="form-label">type</label>
+                <input type="text" name="type" id="type" class="form-control" placeholder="Comic type here "
+                    aria-describedby="typeHelper" value="{{ $comic->type }}">
+                <small id="typeHelper" class="text-muted">Type
+                    the type of the Comic max 50 characters</small>
             </div>
             <button type="submit" class="btn btn-dark w-100 my-4">Edit a Comic</button>
         </form>
