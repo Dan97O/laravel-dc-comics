@@ -44,16 +44,21 @@
                             <td>{{ $comic->type }}</td>
 
                             <td>
-                                <a href="{{ route('admin.comic.show', $comic->id) }}" title="View"
-                                    class="text-decoration-none">
+                                <a class="btn btn-primary" href="{{ route('admin.comic.show', $comic->id) }}"
+                                    role="button">
                                     <i class="fas fa-eye fa-sm fa-fw"></i>
                                 </a>
-                                <a href="" title="Edit" class="text-decoration-none">
+                                <a class="btn btn-secondary" href="{{ route('admin.comic.edit', $comic->id) }}"
+                                    role="button">
                                     <i class="fas fa-pencil fa-sm fa-fw"></i>
                                 </a>
-                                <a href="" title="Delete" class="text-decoration-none">
-                                    <i class="fas fa-trash fa-sm fa-fw"></i>
-                                </a>
+                                <form action="{{ route('admin.comic.destroy', $comic->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger" title="Delete">
+                                        <i class="fas fa-trash fa-sm fa-fw"></i>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @empty
