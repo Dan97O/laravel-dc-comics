@@ -5,7 +5,7 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <h1>Admin comics</h1>
-            <a href="{{ route('comic.create') }}" class="btn btn-dark d-block">
+            <a href="{{ route('admin.comic.create') }}" class="btn btn-dark d-block">
                 <i class="fas fa-plus-circle fa-sm fa-fw"></i>
                 New Comic
             </a>
@@ -44,7 +44,8 @@
                             <td>{{ $comic->type }}</td>
 
                             <td>
-                                <a href="{{ route('comic.show', $comic->id) }}" title="View" class="text-decoration-none">
+                                <a href="{{ route('admin.comic.show', $comic->id) }}" title="View"
+                                    class="text-decoration-none">
                                     <i class="fas fa-eye fa-sm fa-fw"></i>
                                 </a>
                                 <a href="" title="Edit" class="text-decoration-none">
