@@ -100,16 +100,18 @@ class ComicsController extends Controller
     public function update(Request $request, Comics $comic)
     {
         //dd($request->all());
-        $comic = new Comics();
-        $comic->title = $request->title;
-        $comic->description = $request->description;
-        $comic->thumb = $request->thumb;
-        $comic->price = $request->price;
-        $comic->series = $request->series;
-        $comic->sale_date = $request->sale_date;
-        $comic->type = $request->type;
-        $comic->save();
-        return to_route('admin.comic.index', compact('comic'));
+        $data = [
+            'title' => $request->title,
+            'thumb' => $request->thumb,
+            'description' => $request->description,
+            'price' => $request->price,
+            'series' => $request->series,
+            'sale_date' => $request->sale_date,
+            'type' => $request->type,
+        ];
+
+        $comic->update($data);
+        return to_route('admin.comic.index');
     }
 
     /**
