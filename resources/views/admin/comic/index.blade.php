@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         @if (session('message'))
             <div class="alert alert-primary" role="alert">
                 <strong>{{ session('message') }}</strong>
@@ -40,7 +40,7 @@
 
                 <tbody class="table-group-divider">
                     @forelse ($comics as $comic)
-                        <tr class="table-primary">
+                        <tr class="table-dark">
                             <td scope="row">{{ $comic->id }}</td>
                             <td><img height="100" src="{{ $comic->thumb }}" alt="{{ $comic->title }}"></td>
                             <td>{{ $comic->title }}</td>
