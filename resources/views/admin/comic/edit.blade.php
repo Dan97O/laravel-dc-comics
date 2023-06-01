@@ -4,15 +4,7 @@
 @section('content')
     <div class="container">
 
-        @if ($errors->any())
-            <div class="alert alert-danger" role="alert">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li> {{ $error }} </li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        @include('partials.validate_errors')
 
         <h5 class="text-uppercase text-muted my-4">Edit a Comics</h5>
 

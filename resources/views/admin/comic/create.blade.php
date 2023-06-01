@@ -4,16 +4,7 @@
 @section('content')
     <div class="container">
 
-        @if ($errors->any())
-            <div class="alert alert-danger" role="alert">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li> {{ $error }} </li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
+        @include('partials.validate_errors')
 
         <h5 class="text-uppercase text-muted my-4">Add a new Comics</h5>
 
@@ -85,10 +76,9 @@
                 <label for="sale_date" class="form-label">sale_date</label>
                 <input type="date" name="sale_date" id="sale_date"
                     class="form-control @error('sale_date') is-invalid @enderror" placeholder="Comic sale_date here "
-                    aria-describedby="sale_dateHelper"
-                    value="{{ old('sale_date') }}>
+                    aria-describedby="sale_dateHelper" value="{{ old('sale_date') }}">
                 <small id="sale_dateHelper" class="text-muted">Type
-                the sale_date of the Comic max 50 characters</small>
+                    the sale_date of the Comic max 50 characters</small>
                 @error('sale_date')
                     <div class="alert alert-danger" role="alert">
                         <strong>{{ $message }}</strong>
