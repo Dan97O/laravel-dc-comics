@@ -53,6 +53,15 @@ class ComicsController extends Controller
         'type' => $request->type,
         ];
         Comics::create($data); */
+        $val_data = $request->validate([
+            'title' => 'required|max:50',
+            'description' => 'nullable|',
+            'thumb' => 'nullable|max:255',
+            'price' => 'nullable|max:10',
+            'series' => 'required|max:50',
+            'sale_date' => 'nullable|date|max:100',
+            'type' => 'nullable|max:50',
+        ]);
 
         $comic = new Comics();
         $comic->title = $request->title;
@@ -100,17 +109,28 @@ class ComicsController extends Controller
     public function update(Request $request, Comics $comic)
     {
         //dd($request->all());
-        $data = [
-            'title' => $request->title,
-            'thumb' => $request->thumb,
-            'description' => $request->description,
-            'price' => $request->price,
-            'series' => $request->series,
-            'sale_date' => $request->sale_date,
-            'type' => $request->type,
-        ];
 
-        $comic->update($data);
+        $val_data = $request->validate([
+            'title' => 'required|max:50',
+            'description' => 'nullable|',
+            'thumb' => 'nullable|max:255',
+            'price' => 'nullable|max:10',
+            'series' => 'required|max:50',
+            'sale_date' => 'nullable|date|max:100',
+            'type' => 'nullable|max:50',
+        ]);
+
+        /*   $data = [
+        'title' => $request->title,
+        'thumb' => $request->thumb,
+        'description' => $request->description,
+        'price' => $request->price,
+        'series' => $request->series,
+        'sale_date' => $request->sale_date,
+        'type' => $request->type,
+        ]; */
+
+        $comic->update($val_data);
         return to_route('admin.comic.index')->with('message', 'Comic Update');
     }
 
