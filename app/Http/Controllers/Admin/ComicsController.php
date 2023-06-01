@@ -55,7 +55,7 @@ class ComicsController extends Controller
         Comics::create($data); */
         $val_data = $request->validate([
             'title' => 'required|max:50',
-            'description' => 'nullable|',
+            'description' => 'nullable',
             'thumb' => 'nullable|max:255',
             'price' => 'nullable|max:10',
             'series' => 'required|max:50',
@@ -112,7 +112,7 @@ class ComicsController extends Controller
 
         $val_data = $request->validate([
             'title' => 'required|max:50',
-            'description' => 'nullable|',
+            'description' => 'nullable',
             'thumb' => 'nullable|max:255',
             'price' => 'nullable|max:10',
             'series' => 'required|max:50',
